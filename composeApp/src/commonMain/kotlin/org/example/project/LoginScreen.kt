@@ -1,12 +1,11 @@
 package org.example.project
 
-
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -48,6 +47,17 @@ internal fun LoginScreenContent(
 
     ){
     Scaffold(
+        topBar = {
+            Text(
+                modifier = Modifier.fillMaxWidth().alpha(
+                    0.8f
+                ).padding(bottom = 64.dp),
+                fontSize = 64.sp,
+                color = Color.Blue,
+                textAlign = TextAlign.Center,
+                text = "Test"
+            )
+        },
         bottomBar = {
 
         },
@@ -56,15 +66,6 @@ internal fun LoginScreenContent(
         },
         content ={
             Column (modifier = Modifier.fillMaxSize()) {
-                Text(
-                    modifier = Modifier.fillMaxWidth().alpha(
-                        0.8f
-                    ).padding(bottom = 64.dp),
-                    fontSize = 64.sp,
-                    color = Color.Gray,
-                    textAlign = TextAlign.Center,
-                    text = "Test"
-                )
                 TextField(
                     //modifier = reusableModifierTextField,
                     value = uiState.textEmail,
